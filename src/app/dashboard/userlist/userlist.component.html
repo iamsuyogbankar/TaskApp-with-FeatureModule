@@ -1,0 +1,23 @@
+<div class="container register-form mt-5">
+  <div class="form">
+    <div class="">
+        <!-- <p>UserData</p> -->
+        <table  class="table table-striped">
+          <thead class="thead-dark">
+            <tr align="center">
+              <th scope="col">Sr.No</th>
+              <th scope="col">Title</th>
+              <th scope="col">Body</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr align="center" *ngFor="let data of apiData;">
+              <td>{{ data.id }}</td>
+              <td>{{ data.title }}</td>
+              <td>{{ data.body }}</td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+</div>

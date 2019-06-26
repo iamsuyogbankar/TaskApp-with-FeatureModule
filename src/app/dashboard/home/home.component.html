@@ -1,0 +1,23 @@
+<div class="container register-form mt-5">
+  <div class="form">
+    <div class="">
+        <!-- <p>UserData</p> -->
+        <table  class="table table-striped">
+          <thead class="thead-dark">
+            <tr align="center">
+              <th scope="col">Sr.No</th>
+              <th scope="col">First Name</th>
+              <th scope="col">Last Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr align="center" *ngFor="let data of getuserdata; let i=index">
+              <td>{{ i+1 }}</td>
+              <td>{{ data.fname }}</td>
+              <td>{{ data.lname }}</td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+</div>

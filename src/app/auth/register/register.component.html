@@ -1,0 +1,100 @@
+<div class="container register-form mt-5">
+  <div class="form">
+      <div class="note">
+          <p>User Registration</p>
+      </div>
+      <form [formGroup]="regForm" (ngSubmit)="RegistrationSubmit(regForm.value)" method="POST">
+        <div class="form-content">
+          <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="text" class="form-control" 
+                      placeholder="Your FirstName *" formControlName="fname" 
+                      name="fname" id="fname" value="" required>
+                      <div class="" *ngIf="regForm.controls['fname'].touched">
+                        <span style="color: red;" *ngIf="regForm.controls['fname'].hasError('required')">
+                          <span>*</span>Your FirstName is Required</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="text" class="form-control" 
+                      placeholder="Your LastName *" formControlName="lname" 
+                      name="lname" id="lname" value="" required>
+                      <div class="" *ngIf="regForm.controls['lname'].touched">
+                        <span style="color: red;" *ngIf="regForm.controls['lname'].hasError('required')">
+                        <span>*</span>Your LastName is Required</span>
+                      </div>
+                  </div>                    
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="tel" class="form-control" 
+                    placeholder="Phone Number *" value=""
+                    formControlName="mnumber" name="mnumber" id="mnumber">
+                    <div class="" *ngIf="regForm.controls['mnumber'].touched">
+                      <span style="color: red;" *ngIf="regForm.controls['mnumber'].hasError('required')">
+                          <span>*</span>Your Mobile Number is Required
+                      </span>
+                      <span style="color: red;" *ngIf="regForm.controls['mnumber'].hasError('pattern')">
+                          <span>*</span>Invalid Mobile Number
+                      </span>
+                      <div style="color: red;" *ngIf="regForm.controls['mnumber'].hasError('minlength')">
+                          <span>*</span>Mobile Number must be 10 digit
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <input type="email" class="form-control" 
+                    placeholder="Email Id *" value=""
+                    formControlName="email" name="email" id="email" required>
+                    <div class="" *ngIf="regForm.controls['email'].touched">
+                      <span style="color: red;" *ngIf="regForm.controls['email'].hasError('required')">
+                          <span>*</span>Your Email Id is Required
+                      </span>
+                      <span style="color: red;" *ngIf="regForm.controls['email'].hasError('pattern')">
+                          <span>*</span>Invalid Pattern
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="password" class="form-control"
+                      placeholder="Your Password *" value=""
+                      formControlName="password" name="password" id="password" required>
+                      <div class="" *ngIf="regForm.controls['password'].touched">
+                        <span style="color: red;" *ngIf="regForm.controls['password'].hasError('required')">
+                            <span>*</span>Your password Id is Required
+                        </span>
+                        <span style="color: red;" *ngIf="regForm.controls['password'].hasError('pattern')">
+                            <span>*</span>Invalid Pattern(requires atleast 1uppercase & 1lowecase letters,one digit,6-13 length,no space)
+                        </span>
+                      </div>                      
+                  </div>
+
+                  <div class="form-group">
+                      <textarea name="address" formControlName="address" name="address" id="address"
+                        cols="53" rows="3" class="form-control"></textarea>
+                        <div class="" *ngIf="regForm.controls['address'].touched">
+                          <span style="color: red;" *ngIf="regForm.controls['address'].hasError('required')">
+                            <span>*</span>Your FirstName is Required</span>
+                        </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+          <div>
+            <a routerLink="/login">Already have Registerd? Go for Login</a>
+          </div>
+          <div class="">
+            <button type="submit" class="btn btn-primary btn-md" [disabled]="!regForm.dirty">Submit</button>
+          </div>
+        </div>
+      </form>
+  </div>
+</div>

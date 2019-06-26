@@ -1,0 +1,51 @@
+<div class="container register-form mt-5">
+    <div class="form">
+        <div class="note">
+            <p>Login</p>
+        </div>
+        <form [formGroup]="loginForm" (ngSubmit)="loginSubmit(loginForm.value)" method="POST">
+        <div class="form-content">
+          <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="email" class="form-control"
+                    placeholder="Your Email *"                    
+                    formControlName="email" name="email" id="email" 
+                    value="" required>
+
+                    <div class="" *ngIf="loginForm.controls['email'].touched">
+                      <span style="color: red;" *ngIf="loginForm.controls['email'].hasError('required')">
+                          <span>*</span> Your Email Id is Required
+                      </span>
+                      <span style="color: red;" *ngIf="loginForm.controls['email'].hasError('pattern')">
+                          <span>*</span> Invalid Pattern
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="password" class="form-control" 
+                    placeholder="Your Password *" 
+                    formControlName="password" name="password" id="password" 
+                    value="" required>
+
+                    <div class="" *ngIf="loginForm.controls['password'].touched">
+                        <span style="color: red;" *ngIf="loginForm.controls['password'].hasError('required')">
+                            <span>*</span> Your password is Required
+                        </span>
+                      </div>
+                  </div>
+                </div> 
+            </div>
+          </div>
+          <div class="mt-4">
+              <a routerLink="/register">You haven't register yet? Go for Registration</a>
+            </div>
+            <button type="submit" class="btn btn-primary btn-md" [disabled]="!loginForm.dirty">Sign In</button>
+            <!-- <button type="submit" routerLink="/register" class="btn btn-primary btn-md">Go For Registration</button> -->
+        </div>
+      </form>
+  </div>
+</div>
