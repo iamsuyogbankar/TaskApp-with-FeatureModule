@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { CommonService } from './common.service';
-
+import { DataTablesModule } from 'angular-datatables';
 
 @NgModule({
   declarations: [
@@ -18,8 +18,9 @@ import { CommonService } from './common.service';
     AppRoutingModule,
     AuthModule,
     DashboardModule,
+    DataTablesModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
   ],
   providers: [CommonService],
   bootstrap: [AppComponent]

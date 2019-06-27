@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
     private router: Router, private toasterService: ToastrService) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.pattern("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$")]],
-      password: ['', [Validators.required, Validators.pattern("^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{4,8}$")]]
+      password: ['', [Validators.required]]
     });
    }
 
@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit {
             return this.authenticateUser(registeredUsers[i]);
           }
         }
-        this.toasterService.error('credentials didnot match', 'Sorry', {timeOut: 1000});
+        this.toasterService.error('Invalid EmailId or Password', 'Sorry', {timeOut: 1000});
   }
 
   authenticateUser(id){

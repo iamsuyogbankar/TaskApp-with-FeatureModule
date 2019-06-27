@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, Output, EventEmitter } from '@angular/core';
 import { DashboardService } from '../dashboard.service';
+
+declare var $:any;
+import 'datatables.net'
 
 @Component({
   selector: 'app-userlist',
@@ -13,6 +16,6 @@ public apiData = [];
 
   ngOnInit() {
     this.dashoardService.getApiData().subscribe(dt => this.apiData = dt);
+    
   }
-
 }

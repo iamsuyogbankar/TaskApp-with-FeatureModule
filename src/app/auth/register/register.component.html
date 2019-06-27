@@ -71,9 +71,12 @@
                         <span style="color: red;" *ngIf="regForm.controls['password'].hasError('required')">
                             <span>*</span>Your password Id is Required
                         </span>
-                        <span style="color: red;" *ngIf="regForm.controls['password'].hasError('pattern')">
-                            <span>*</span>Invalid Pattern(requires atleast 1uppercase & 1lowecase letters,one digit,6-13 length,no space)
+                        <span style="color: red;" *ngIf="regForm.controls['password'].hasError('minlength')">
+                            <span>*</span>length must be atleast 4 digit
                         </span>
+                        <span style="color: red;" *ngIf="regForm.controls['password'].hasError('maxlength')">
+                          <span>*</span>length should not more than 8 digit
+                      </span>
                       </div>                      
                   </div>
 
