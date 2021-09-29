@@ -24,7 +24,7 @@
     "@swimlane/ngx-datatable": "^15.0.2",
     "angular-datatables": "^8.0.0",
     "core-js": "^2.5.4",
-    "datatables.net": "^1.10.19",
+    "datatables.net": "^1.11.3",
     "datatables.net-dt": "^1.10.19",
     "hammerjs": "^2.0.8",
     "ngx-toastr": "^10.0.4",
